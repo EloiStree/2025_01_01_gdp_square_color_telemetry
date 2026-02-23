@@ -1,5 +1,5 @@
 ```
-git submodules add https://github.com/EloiStree/2025_01_01_gdp_wow_pixel_position.git addons/2025_01_01_gdp_wow_pixel_position
+git submodules add https://github.com/EloiStree/2025_01_01_gdp_square_color_telemetry.git addons/2025_01_01_gdp_square_color_telemetry
 
 ```
 
