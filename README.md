@@ -1,7 +1,8 @@
 ```
-git submodules add https://github.com/EloiStree/2025_01_01_gdp_square_color_telemetry.git addons/2025_01_01_gdp_square_color_telemetry
-
+git submodule add https://github.com/EloiStree/2025_01_01_gdp_square_color_telemetry.git addons/2025_01_01_gdp_square_color_telemetry
 ```
+
+Unity version: https://github.com/EloiStree/2025_07_29_upm_square_and_font_color_bytes_telemetry/blob/main/README.md
 
 
 # 2025_01_01_gdp_wow_pixel_position
