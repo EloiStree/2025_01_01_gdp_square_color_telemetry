@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://ddufnyg0lre2c"]
+
+[ext_resource type="Script" uid="uid://3n4it5hiopse" path="res://addons/2025_01_01_gdp_square_color_telemetry/colometry_player_2d_position_to_color_.gd" id="1_l25og"]
+[ext_resource type="Script" uid="uid://glqhxo72itgm" path="res://addons/2025_01_01_gdp_square_color_telemetry/colometry_text_to_rgbb_font.gd" id="2_wcemo"]
+[ext_resource type="FontFile" uid="uid://bw6yvfgxvlta3" path="res://addons/2025_01_01_gdp_square_color_telemetry/font/Vertical4BitsSquare.ttf" id="3_wcemo"]
+
+[node name="Scene" type="Node2D" unique_id=814214427]
+
+[node name="Example_SquareColorPosition2D" type="Node2D" parent="." unique_id=437304333]
+
+[node name="NodePlayerToColor" type="Node" parent="Example_SquareColorPosition2D" unique_id=45585761 node_paths=PackedStringArray("player_position_node2d", "player_direction_node2d", "level_down_left", "level_top_right")]
+script = ExtResource("1_l25og")
+player_position_node2d = NodePath("../Node2D_Player")
+player_direction_node2d = NodePath("../Node2D_Player")
+level_down_left = NodePath("../Node2DLD")
+level_top_right = NodePath("../Node2DTR")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Example_SquareColorPosition2D" unique_id=887783107]
+
+[node name="ColorRect" type="ColorRect" parent="Example_SquareColorPosition2D/CanvasLayer" unique_id=1754336184]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2DLD" type="Node2D" parent="Example_SquareColorPosition2D" unique_id=478799667]
+position = Vector2(-295, 602)
+
+[node name="Node2DTR" type="Node2D" parent="Example_SquareColorPosition2D" unique_id=853372707]
+position = Vector2(1569, -416)
+
+[node name="Node2D_Player" type="Node2D" parent="Example_SquareColorPosition2D" unique_id=1270227654]
+position = Vector2(882, -125)
+
+[node name="Example_FontBytesArray" type="Node2D" parent="." unique_id=977792943]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Example_FontBytesArray" unique_id=1011797266]
+
+[node name="Control" type="Control" parent="Example_FontBytesArray/CanvasLayer" unique_id=1208027241 node_paths=PackedStringArray("label_black", "label_red", "label_green", "label_blue", "label_white_bar")]
+layout_mode = 3
+anchor_left = 0.388
+anchor_top = 0.259
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -242.97601
+offset_top = -42.832
+offset_bottom = -1.0
+script = ExtResource("2_wcemo")
+label_black = NodePath("LabelBlack")
+label_red = NodePath("LabelRed")
+label_green = NodePath("LabelGreen")
+label_blue = NodePath("LabelBlue")
+label_white_bar = NodePath("LabelWhiteBar")
+
+[node name="LabelRed" type="Label" parent="Example_FontBytesArray/CanvasLayer/Control" unique_id=610595196]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wcemo")
+theme_override_font_sizes/font_size = 20
+text = "0123456789ABCDEFGHIJKLMNOP"
+
+[node name="LabelGreen" type="Label" parent="Example_FontBytesArray/CanvasLayer/Control" unique_id=1617039500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_wcemo")
+theme_override_font_sizes/font_size = 20
+text = "0123456789ABCDEFGHIJKLMNOP"
+
+[node name="LabelBlue" type="Label" parent="Example_FontBytesArray/CanvasLayer/Control" unique_id=1477175726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_wcemo")
+theme_override_font_sizes/font_size = 20
+text = "0123456789ABCDEFGHIJKLMNOP"
+
+[node name="LabelBlack" type="Label" parent="Example_FontBytesArray/CanvasLayer/Control" unique_id=1733406194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_wcemo")
+theme_override_font_sizes/font_size = 20
+text = "0123456789ABCDEFGHIJKLMNOP"
+
+[node name="LabelWhiteBar" type="Label" parent="Example_FontBytesArray/CanvasLayer/Control" unique_id=1811405449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_wcemo")
+theme_override_font_sizes/font_size = 20
+text = "abcdefghijklmnop"
+
+[connection signal="on_position_as_color_changed" from="Example_SquareColorPosition2D/NodePlayerToColor" to="Example_SquareColorPosition2D/CanvasLayer/ColorRect" method="set_color"]
